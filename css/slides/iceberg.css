@@ -3,7 +3,8 @@
     radial-gradient(ellipse at 50% 20%, rgba(212,184,106,0.22) 0%, transparent 50%),
     radial-gradient(ellipse at 25% 75%, rgba(197,165,90,0.14) 0%, transparent 45%),
     radial-gradient(ellipse at 75% 60%, rgba(232,213,163,0.1) 0%, transparent 40%),
-    linear-gradient(155deg, var(--parchment-light) 0%, var(--parchment) 25%, var(--parchment-deep) 50%, rgba(232,213,163,0.45) 72%, var(--parchment) 95%);
+    linear-gradient(155deg, var(--parchment) 0%, rgba(242,233,212,0.9) 35%, rgba(232,213,163,0.28) 65%, rgba(237,224,200,0.65) 100%),
+    var(--parchment);
 }
 .iceberg-wrap {
   width: 100%; height: 100%; display: flex; flex-direction: column;
