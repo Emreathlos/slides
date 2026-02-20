@@ -250,7 +250,7 @@ var Engine = (function() {
         prev.classList.remove('leaving');
         busy = false;
       },
-      isDark(next)
+      isDark(prev)
     );
   }
 
