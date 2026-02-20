@@ -7,7 +7,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--choc
   position: absolute; inset: 0; width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
   opacity: 0; pointer-events: none;
-  transition: opacity 1s var(--ease-palace);
+  transition: opacity 80ms;
   overflow: hidden;
 }
 .slide.active { opacity: 1; pointer-events: auto; z-index: 2; }
@@ -22,7 +22,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--choc
 }
 .slide.active .slide-inner { transform: scale(1); opacity: 1; }
 
-/* ─── ORNAMENTAL FRAME ─── */
+/* ─── ORNAMENTAL FRAME (Stroke Draw) ─── */
 .ornament-frame {
   position: absolute; inset: 24px; pointer-events: none; z-index: 10;
 }
@@ -31,44 +31,45 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--choc
   content: '';
   position: absolute;
   width: 80px; height: 80px;
-  border-color: var(--gold);
-  border-style: solid;
+  border: none;
   opacity: 0;
-  transition: opacity 800ms var(--ease-palace) 200ms, transform 800ms var(--ease-palace) 200ms;
+  transition: opacity 400ms var(--ease-palace) 100ms, background-size 1000ms var(--ease-regal) 200ms;
 }
+/* Top-left: draws right and down */
 .ornament-frame::before {
   top: 0; left: 0;
-  border-width: 2px 0 0 2px;
-  transform: translate(-8px, -8px);
+  background:
+    linear-gradient(var(--gold), var(--gold)) top left / 0% 2px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) top left / 2px 0% no-repeat;
 }
+/* Top-right: draws left and down */
 .ornament-frame::after {
   top: 0; right: 0;
-  border-width: 2px 2px 0 0;
-  transform: translate(8px, -8px);
+  background:
+    linear-gradient(var(--gold), var(--gold)) top right / 0% 2px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) top right / 2px 0% no-repeat;
 }
+/* Bottom-left: draws right and up */
 .ornament-frame .corner-bl {
   bottom: 0; left: 0;
-  border-width: 0 0 2px 2px;
-  transform: translate(-8px, 8px);
+  background:
+    linear-gradient(var(--gold), var(--gold)) bottom left / 0% 2px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) bottom left / 2px 0% no-repeat;
 }
+/* Bottom-right: draws left and up */
 .ornament-frame .corner-br {
   bottom: 0; right: 0;
-  border-width: 0 2px 2px 0;
-  transform: translate(8px, 8px);
+  background:
+    linear-gradient(var(--gold), var(--gold)) bottom right / 0% 2px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) bottom right / 2px 0% no-repeat;
 }
 .slide.active .ornament-frame::before,
 .slide.active .ornament-frame::after,
 .slide.active .ornament-frame .corner-bl,
 .slide.active .ornament-frame .corner-br {
   opacity: 0.7;
-  transform: translate(0, 0);
+  background-size: 100% 2px, 2px 100%;
 }
-
-/* Inner ornament dots */
-.ornament-frame::before { background: radial-gradient(circle at 0 0, var(--gold) 2px, transparent 2px); background-size: 100% 100%; }
-.ornament-frame::after { background: radial-gradient(circle at 100% 0, var(--gold) 2px, transparent 2px); }
-.ornament-frame .corner-bl { background: radial-gradient(circle at 0 100%, var(--gold) 2px, transparent 2px); }
-.ornament-frame .corner-br { background: radial-gradient(circle at 100% 100%, var(--gold) 2px, transparent 2px); }
 
 /* ─── DECORATIVE FLOURISH ─── */
 .flourish {
@@ -130,6 +131,29 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--choc
 @keyframes pulseGlow {
   0%, 100% { box-shadow: 0 0 20px rgba(197, 165, 90, 0.1); }
   50% { box-shadow: 0 0 40px rgba(197, 165, 90, 0.25); }
+}
+@keyframes particleDrift {
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(12px, -18px) scale(0.8); }
+  50% { transform: translate(-8px, -30px) scale(1.1); }
+  75% { transform: translate(16px, -12px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* ─── GOLD PARTICLES ─── */
+.particles-container { position: absolute; inset: 0; pointer-events: none; z-index: 5; overflow: hidden; }
+.gold-particle {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle, var(--gold-bright), var(--gold));
+  transition: opacity 2s var(--ease-palace);
+  animation: particleDrift linear infinite;
+}
+
+/* ─── WIPE TRANSITION ─── */
+.wipe {
+  position: fixed; inset: 0; z-index: 50;
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 40%, var(--gold-bright) 60%, var(--gold) 100%);
+  transform: translateX(-105%); pointer-events: none;
 }
 
 /* ─── KEYBOARD HINT ─── */

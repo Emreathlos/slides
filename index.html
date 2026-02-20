@@ -34,6 +34,7 @@
 		<div class="progress-bar" id="prog"></div>
 		<div class="slide-counter" id="cnt">1 / 13</div>
 		<div class="key-hint" id="hint">← → tuşları ile ilerleyin</div>
+		<div class="wipe" id="wipe"></div>
 
 		<div class="deck" id="deck">
 			<!-- ═══ 1: HERO ═══ -->
@@ -394,11 +395,9 @@
 									<div class="stat-lbl">Çözülmüş Problem</div>
 								</div>
 								<div class="rv d5">
-									<div class="stat-num" data-count="8" data-suffix=" Hafta">
-										0
-									</div>
+									<div class="stat-num" data-count="8">0</div>
 									<div class="stat-bar"></div>
-									<div class="stat-lbl">Test Süresi</div>
+									<div class="stat-lbl">Hafta Test Süresi</div>
 								</div>
 								<div class="rv d6">
 									<div class="stat-num" data-count="30">0</div>
@@ -427,7 +426,6 @@
 						</div>
 						<div class="cost-table" style="margin-top: 32px">
 							<div class="cost-row rv d3">
-								<div class="cost-ico">Y</div>
 								<div class="cost-name">Yazılımcı</div>
 								<div class="cost-detail">
 									3 hafta boyunca bakım ve geliştirmeler
@@ -435,7 +433,6 @@
 								<div class="cost-hrs">20 Saat</div>
 							</div>
 							<div class="cost-row rv d4">
-								<div class="cost-ico">R</div>
 								<div class="cost-name">Resepsiyon Ekibi</div>
 								<div class="cost-detail">
 									Misafirlere sistemin anlatılması ve yönlendirme
@@ -443,19 +440,16 @@
 								<div class="cost-hrs">40 Saat</div>
 							</div>
 							<div class="cost-row rv d4">
-								<div class="cost-ico">H</div>
 								<div class="cost-name">Hosting / Sunucu</div>
 								<div class="cost-detail">Sistemin çalışacağı altyapı</div>
 								<div class="cost-hrs">Ücretsiz Katman</div>
 							</div>
 							<div class="cost-row rv d5">
-								<div class="cost-ico">Q</div>
 								<div class="cost-name">QR ve Baskı</div>
 								<div class="cost-detail">Görsel materyallerin hazırlanması</div>
 								<div class="cost-hrs">Malzeme Tedariği</div>
 							</div>
 							<div class="cost-row rv d6">
-								<div class="cost-ico">Σ</div>
 								<div class="cost-name">Genel Toplam</div>
 								<div class="cost-detail"></div>
 								<div class="cost-hrs">~60 Saat + Malzemeler</div>
@@ -611,6 +605,7 @@
 		<!-- JS: Modular scripts (no server required) -->
 		<script src="js/carousel.js"></script>
 		<script src="js/counters.js"></script>
+		<script src="js/particles.js"></script>
 		<script src="js/reveals.js"></script>
 		<script src="js/engine.js"></script>
 		<script>

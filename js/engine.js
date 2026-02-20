@@ -1,17 +1,32 @@
 var Engine = (function() {
-  var slides, cnt, prog, hint;
+  var slides, cnt, prog, hint, wipe;
   var cur = 0, busy = false;
+  var darkSlides = ['slide-hero', 'slide-quote', 'slide-silence', 'slide-team'];
 
   function init() {
     slides = document.querySelectorAll('.slide');
     cnt = document.getElementById('cnt');
     prog = document.getElementById('prog');
     hint = document.getElementById('hint');
+    wipe = document.getElementById('wipe');
 
     Carousel.init();
+
+    // Create particles on dark slides
+    slides.forEach(function(slide) {
+      if (isDark(slide)) Particles.create(slide);
+    });
+
     bindEvents();
     updateUI();
     Reveals.trigger(slides[0]);
+  }
+
+  function isDark(slide) {
+    for (var i = 0; i < darkSlides.length; i++) {
+      if (slide.classList.contains(darkSlides[i])) return true;
+    }
+    return false;
   }
 
   function updateUI() {
@@ -29,19 +44,34 @@ var Engine = (function() {
     var prev = slides[cur];
     var next = slides[i];
 
-    prev.classList.remove('active');
-    prev.classList.add('leaving');
-    next.classList.add('active');
-
-    Reveals.reset(next);
-    cur = i;
-    updateUI();
-    Reveals.trigger(next);
+    // Phase 1: Golden wipe sweeps in
+    wipe.style.transition = 'transform 480ms cubic-bezier(0.4, 0, 0, 1)';
+    wipe.style.transform = 'translateX(0)';
 
     setTimeout(function() {
-      prev.classList.remove('leaving');
-      busy = false;
-    }, 1100);
+      // Phase 2: Swap slides behind the wipe
+      prev.classList.remove('active');
+      prev.classList.add('leaving');
+      next.classList.add('active');
+
+      Reveals.reset(next);
+      cur = i;
+      updateUI();
+
+      // Phase 3: Wipe sweeps out, reveal new slide
+      setTimeout(function() {
+        wipe.style.transform = 'translateX(105%)';
+        Reveals.trigger(next);
+
+        setTimeout(function() {
+          prev.classList.remove('leaving');
+          // Reset wipe position instantly
+          wipe.style.transition = 'none';
+          wipe.style.transform = 'translateX(-105%)';
+          busy = false;
+        }, 520);
+      }, 60);
+    }, 460);
   }
 
   function bindEvents() {
