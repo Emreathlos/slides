@@ -1,0 +1,142 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: var(--chocolate); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+
+/* ─── SLIDE ENGINE ─── */
+.deck { width: 100vw; height: 100vh; position: relative; }
+.slide {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 1s var(--ease-palace);
+  overflow: hidden;
+}
+.slide.active { opacity: 1; pointer-events: auto; z-index: 2; }
+.slide.leaving { opacity: 0; z-index: 1; }
+
+.slide-inner {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  transform: scale(0.97);
+  opacity: 0;
+  transition: transform 1s var(--ease-palace), opacity 0.8s var(--ease-palace);
+}
+.slide.active .slide-inner { transform: scale(1); opacity: 1; }
+
+/* ─── ORNAMENTAL FRAME ─── */
+.ornament-frame {
+  position: absolute; inset: 24px; pointer-events: none; z-index: 10;
+}
+.ornament-frame::before, .ornament-frame::after,
+.ornament-frame .corner-bl, .ornament-frame .corner-br {
+  content: '';
+  position: absolute;
+  width: 80px; height: 80px;
+  border-color: var(--gold);
+  border-style: solid;
+  opacity: 0;
+  transition: opacity 800ms var(--ease-palace) 200ms, transform 800ms var(--ease-palace) 200ms;
+}
+.ornament-frame::before {
+  top: 0; left: 0;
+  border-width: 2px 0 0 2px;
+  transform: translate(-8px, -8px);
+}
+.ornament-frame::after {
+  top: 0; right: 0;
+  border-width: 2px 2px 0 0;
+  transform: translate(8px, -8px);
+}
+.ornament-frame .corner-bl {
+  bottom: 0; left: 0;
+  border-width: 0 0 2px 2px;
+  transform: translate(-8px, 8px);
+}
+.ornament-frame .corner-br {
+  bottom: 0; right: 0;
+  border-width: 0 2px 2px 0;
+  transform: translate(8px, 8px);
+}
+.slide.active .ornament-frame::before,
+.slide.active .ornament-frame::after,
+.slide.active .ornament-frame .corner-bl,
+.slide.active .ornament-frame .corner-br {
+  opacity: 0.7;
+  transform: translate(0, 0);
+}
+
+/* Inner ornament dots */
+.ornament-frame::before { background: radial-gradient(circle at 0 0, var(--gold) 2px, transparent 2px); background-size: 100% 100%; }
+.ornament-frame::after { background: radial-gradient(circle at 100% 0, var(--gold) 2px, transparent 2px); }
+.ornament-frame .corner-bl { background: radial-gradient(circle at 0 100%, var(--gold) 2px, transparent 2px); }
+.ornament-frame .corner-br { background: radial-gradient(circle at 100% 100%, var(--gold) 2px, transparent 2px); }
+
+/* ─── DECORATIVE FLOURISH ─── */
+.flourish {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  opacity: 0; transform: scaleX(0.5);
+  transition: opacity 800ms var(--ease-palace), transform 800ms var(--ease-palace);
+}
+.slide.active .flourish.vis { opacity: 1; transform: scaleX(1); }
+.flourish-line { width: 60px; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); }
+.flourish-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+/* ─── REVEAL SYSTEM ─── */
+.rv {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 700ms var(--ease-palace), transform 700ms var(--ease-palace);
+}
+.slide.active .rv.vis { opacity: 1; transform: translateY(0); }
+.rv-scale {
+  opacity: 0; transform: scale(0.92);
+  transition: opacity 800ms var(--ease-palace), transform 800ms var(--ease-palace);
+}
+.slide.active .rv-scale.vis { opacity: 1; transform: scale(1); }
+.d1 { transition-delay: 100ms; } .d2 { transition-delay: 250ms; } .d3 { transition-delay: 400ms; }
+.d4 { transition-delay: 550ms; } .d5 { transition-delay: 700ms; } .d6 { transition-delay: 850ms; }
+.d7 { transition-delay: 1000ms; }
+
+/* Gold rule draw */
+.gold-rule { height: 2px; background: linear-gradient(to right, transparent, var(--gold), transparent); transform-origin: center; transform: scaleX(0); transition: transform 1s var(--ease-regal); }
+.slide.active .gold-rule.vis { transform: scaleX(1); }
+
+/* ─── SHARED SLIDE TITLE ─── */
+.slide-title {
+  font-family: var(--font-display); font-size: clamp(1.5rem, 2.4vw, 2.3rem);
+  font-weight: 700; color: var(--chocolate); text-align: center; margin-bottom: 8px;
+}
+
+/* ─── SLIDE COUNTER ─── */
+.slide-counter {
+  position: fixed; bottom: 24px; right: 32px;
+  font-family: var(--font-display); font-size: 13px; font-weight: 400;
+  letter-spacing: 0.08em; color: rgba(197, 165, 90, 0.5);
+  z-index: 100; pointer-events: none;
+}
+.progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(to right, var(--gold-dark), var(--gold-bright)); z-index: 100; transition: width 1s var(--ease-palace); }
+
+/* ─── KEYFRAMES ─── */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes floatPhone {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-14px) rotate(0deg); }
+}
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(197, 165, 90, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(197, 165, 90, 0.25); }
+}
+
+/* ─── KEYBOARD HINT ─── */
+.key-hint {
+  position: fixed; bottom: 24px; left: 36px;
+  font-family: var(--font-display); font-size: 11px; font-weight: 400;
+  color: rgba(197,165,90,0.3); z-index: 100;
+  transition: opacity 1s var(--ease-palace); pointer-events: none;
+}
+.key-hint.gone { opacity: 0; }

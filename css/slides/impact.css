@@ -1,0 +1,21 @@
+.slide-impact { background: var(--parchment); }
+.impact-wrap { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 56px; }
+.impact-cards { display: flex; gap: 40px; max-width: 1000px; width: 100%; margin-top: 16px; }
+.impact-card {
+  flex: 1; text-align: center; padding: 48px 32px;
+  border: 2px solid var(--gold); border-radius: 4px;
+  background: var(--parchment-light); position: relative; overflow: hidden;
+}
+.impact-card::before {
+  content: ''; position: absolute; inset: 6px;
+  border: 1px solid rgba(197,165,90,0.25); border-radius: 2px; pointer-events: none;
+}
+.impact-num {
+  font-family: var(--font-display); font-size: clamp(3.2rem, 5.5vw, 5.5rem);
+  font-weight: 800; line-height: 1; margin-bottom: 8px;
+  background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.impact-bar { width: 40px; height: 2px; background: var(--gold); margin: 12px auto; transform-origin: center; transform: scaleX(0); transition: transform 800ms var(--ease-regal); }
+.slide.active .impact-bar.vis { transform: scaleX(1); }
+.impact-lbl { font-family: var(--font-body); font-size: 1.1rem; color: var(--chocolate-muted); line-height: 1.4; }

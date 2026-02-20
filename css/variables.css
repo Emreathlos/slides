@@ -1,0 +1,23 @@
+:root {
+  --parchment: #F5ECD7;
+  --parchment-light: #FBF6EC;
+  --parchment-deep: #EDE0C8;
+  --ivory: #FFFEF5;
+  --champagne: #E8D5A3;
+  --gold: #C5A55A;
+  --gold-bright: #D4B86A;
+  --gold-dark: #A8893D;
+  --gold-glow: rgba(197, 165, 90, 0.18);
+  --gold-shimmer: rgba(212, 184, 106, 0.35);
+  --chocolate: #2C1810;
+  --chocolate-soft: #4A3428;
+  --chocolate-muted: #7A6558;
+  --mahogany: #3D2216;
+  --green-deep: #1B4332;
+  --green-medium: #2D6A4F;
+  --terracotta: #C4745A;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+  --ease-palace: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-regal: cubic-bezier(0.4, 0, 0, 1);
+}

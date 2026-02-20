@@ -1,0 +1,6 @@
+.slide-flow { background: var(--parchment); }
+.flow-wrap {
+  width: 100%; height: 100%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 32px 40px;
+}
+.flow-img { max-width: 94%; max-height: 72vh; object-fit: contain; border-radius: 4px; }
