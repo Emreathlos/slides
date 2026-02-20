@@ -1,34 +1,36 @@
-let carIdx = 0;
-let carTimer = null;
-let track = null;
-let dots = null;
+var Carousel = (function() {
+  var carIdx = 0;
+  var carTimer = null;
+  var track = null;
+  var dots = null;
 
-export function initCarousel() {
-  track = document.getElementById('reviewTrack');
-  dots = document.querySelectorAll('.carousel-dot');
-  dots.forEach(d => d.addEventListener('click', (e) => {
-    e.stopPropagation();
-    carGo(+d.dataset.idx);
-    carStart();
-  }));
-}
+  function init() {
+    track = document.getElementById('reviewTrack');
+    dots = document.querySelectorAll('.carousel-dot');
+    dots.forEach(function(d) {
+      d.addEventListener('click', function(e) {
+        e.stopPropagation();
+        goTo(+d.dataset.idx);
+        start();
+      });
+    });
+  }
 
-export function carGo(i) {
-  if (!track || !dots.length) return;
-  carIdx = i;
-  track.style.transform = `translateX(-${i * 33.333}%)`;
-  dots.forEach((d, j) => d.classList.toggle('active', j === i));
-}
+  function goTo(i) {
+    if (!track || !dots.length) return;
+    carIdx = i;
+    track.style.transform = 'translateX(-' + (i * 33.333) + '%)';
+    dots.forEach(function(d, j) { d.classList.toggle('active', j === i); });
+  }
 
-function carNext() {
-  carGo((carIdx + 1) % 3);
-}
+  function start() {
+    stop();
+    carTimer = setInterval(function() { goTo((carIdx + 1) % 3); }, 3500);
+  }
 
-export function carStart() {
-  carStop();
-  carTimer = setInterval(carNext, 3500);
-}
+  function stop() {
+    if (carTimer) clearInterval(carTimer);
+  }
 
-export function carStop() {
-  if (carTimer) clearInterval(carTimer);
-}
+  return { init: init, goTo: goTo, start: start, stop: stop };
+})();

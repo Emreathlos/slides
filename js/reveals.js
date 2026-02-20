@@ -1,27 +1,28 @@
-import { animateCounters, resetCounters } from './counters.js';
-import { carGo, carStart, carStop } from './carousel.js';
+var Reveals = (function() {
+  function trigger(slide) {
+    setTimeout(function() {
+      slide.querySelectorAll('.rv, .rv-scale').forEach(function(el) { el.classList.add('vis'); });
+      slide.querySelectorAll('.flourish').forEach(function(el) { el.classList.add('vis'); });
+      slide.querySelectorAll('.gold-rule').forEach(function(el) { el.classList.add('vis'); });
+      slide.querySelectorAll('.timeline-gold-line').forEach(function(el) { el.classList.add('vis'); });
+      slide.querySelectorAll('.stat-bar, .impact-bar').forEach(function(el) { el.classList.add('vis'); });
+    }, 120);
 
-export function triggerReveals(slide) {
-  setTimeout(() => {
-    slide.querySelectorAll('.rv, .rv-scale').forEach(el => el.classList.add('vis'));
-    slide.querySelectorAll('.flourish').forEach(el => el.classList.add('vis'));
-    slide.querySelectorAll('.gold-rule').forEach(el => el.classList.add('vis'));
-    slide.querySelectorAll('.timeline-gold-line').forEach(el => el.classList.add('vis'));
-    slide.querySelectorAll('.stat-bar, .impact-bar').forEach(el => el.classList.add('vis'));
-  }, 120);
+    Counters.animate(slide);
 
-  animateCounters(slide);
-
-  if (slide.classList.contains('slide-reviews')) {
-    carGo(0);
-    carStart();
-  } else {
-    carStop();
+    if (slide.classList.contains('slide-reviews')) {
+      Carousel.goTo(0);
+      Carousel.start();
+    } else {
+      Carousel.stop();
+    }
   }
-}
 
-export function resetReveals(slide) {
-  slide.querySelectorAll('.rv, .rv-scale, .flourish, .gold-rule, .timeline-gold-line, .stat-bar, .impact-bar')
-    .forEach(el => el.classList.remove('vis'));
-  resetCounters(slide);
-}
+  function reset(slide) {
+    slide.querySelectorAll('.rv, .rv-scale, .flourish, .gold-rule, .timeline-gold-line, .stat-bar, .impact-bar')
+      .forEach(function(el) { el.classList.remove('vis'); });
+    Counters.reset(slide);
+  }
+
+  return { trigger: trigger, reset: reset };
+})();
