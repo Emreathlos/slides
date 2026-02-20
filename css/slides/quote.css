@@ -1,7 +1,10 @@
 .slide-quote { background: var(--mahogany); }
 .quote-bg-texture {
   position: absolute; inset: 0;
-  background: repeating-linear-gradient(0deg, rgba(197,165,90,0.02) 0px, transparent 1px, transparent 3px);
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(197,165,90,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 30% 70%, rgba(212,184,106,0.04) 0%, transparent 40%),
+    repeating-linear-gradient(0deg, rgba(197,165,90,0.02) 0px, transparent 1px, transparent 3px);
 }
 .quote-wrap { max-width: 880px; text-align: center; padding: 80px; position: relative; z-index: 2; }
 .quote-mark {

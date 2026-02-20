@@ -1,4 +1,10 @@
-.slide-silence { background: var(--mahogany); position: relative; }
+.slide-silence {
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(197,165,90,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 70%, rgba(212,184,106,0.04) 0%, transparent 40%),
+    var(--mahogany);
+  position: relative;
+}
 .silence-bg { position: absolute; inset: 0; background: url('../../extracted_images/hero-option2.jpg') center/cover; opacity: 0.07; }
 .silence-wrap { position: relative; z-index: 2; max-width: 880px; text-align: center; padding: 80px; }
 .silence-q {

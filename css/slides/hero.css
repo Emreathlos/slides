@@ -3,6 +3,7 @@
 .hero-vignette {
   position: absolute; inset: 0;
   background:
+    radial-gradient(ellipse at 65% 50%, rgba(197,165,90,0.1) 0%, transparent 50%),
     linear-gradient(to right, rgba(15,10,5,0.2) 0%, rgba(15,10,5,0.48) 35%, rgba(15,10,5,0.72) 65%, rgba(15,10,5,0.88) 100%),
     linear-gradient(to top, rgba(15,10,5,0.45) 0%, transparent 45%);
 }

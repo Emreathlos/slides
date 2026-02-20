@@ -1,6 +1,21 @@
-.slide-iceberg { background: var(--parchment); }
+.slide-iceberg {
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(212,184,106,0.22) 0%, transparent 50%),
+    radial-gradient(ellipse at 25% 75%, rgba(197,165,90,0.14) 0%, transparent 45%),
+    radial-gradient(ellipse at 75% 60%, rgba(232,213,163,0.1) 0%, transparent 40%),
+    linear-gradient(155deg, var(--parchment-light) 0%, var(--parchment) 25%, var(--parchment-deep) 50%, rgba(232,213,163,0.45) 72%, var(--parchment) 95%);
+}
 .iceberg-wrap {
   width: 100%; height: 100%; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; padding: 32px 40px;
+  align-items: center; justify-content: center; padding: 72px 64px;
 }
-.iceberg-img { max-width: 96%; max-height: 80vh; object-fit: contain; flex: 1; }
+.iceberg-img {
+  max-width: 62%; max-height: 62vh; object-fit: contain;
+  border-radius: 8px;
+  filter: sepia(0.06) saturate(1.1) brightness(1.02);
+  box-shadow:
+    0 0 0 1px rgba(197,165,90,0.3),
+    0 0 0 8px rgba(251,246,236,0.8),
+    0 0 0 9px rgba(197,165,90,0.2),
+    0 20px 60px rgba(44,24,16,0.12);
+}
