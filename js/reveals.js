@@ -1,5 +1,5 @@
 var Reveals = (function() {
-  var darkSlides = ['slide-hero', 'slide-quote', 'slide-silence', 'slide-team'];
+  var darkSlides = ['slide-hero', 'slide-quote', 'slide-silence', 'slide-preview', 'slide-team'];
 
   function isDark(slide) {
     for (var i = 0; i < darkSlides.length; i++) {

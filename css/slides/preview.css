@@ -1,0 +1,189 @@
+.slide-preview {
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(197,165,90,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(44,24,16,0.4) 0%, transparent 50%),
+    var(--chocolate);
+}
+
+/* Subtle texture overlay */
+.preview-bg-texture {
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(197,165,90,0.012) 3px,
+      rgba(197,165,90,0.012) 4px
+    );
+  pointer-events: none;
+}
+
+.preview-wrap {
+  position: relative; z-index: 2;
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 48px 64px;
+  overflow: hidden;
+}
+
+/* Section label */
+.preview-label {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+/* Title */
+.preview-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+  font-weight: 700;
+  color: var(--parchment-light);
+  text-align: center;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--parchment-light), var(--gold-bright), var(--parchment-light));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Video theatre container — portrait video */
+.preview-theatre {
+  position: relative;
+  margin-top: 16px;
+  height: calc(100vh - 240px);
+  max-height: 70vh;
+  flex-shrink: 1;
+  min-height: 0;
+}
+
+/* Gold frame around video */
+.preview-frame {
+  position: relative;
+  height: 100%;
+  border-radius: 16px;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-bright), var(--gold), var(--gold-dark));
+  background-size: 300% 300%;
+  animation: frameShimmer 6s ease-in-out infinite;
+}
+
+@keyframes frameShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.preview-frame::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 20px;
+  border: 1px solid rgba(197,165,90,0.15);
+  pointer-events: none;
+}
+
+/* Video element — portrait */
+.preview-video {
+  display: block;
+  height: 100%;
+  border-radius: 14px;
+  background: var(--chocolate);
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+/* Reflection / glow beneath */
+.preview-glow {
+  position: absolute;
+  bottom: -40px;
+  left: 10%;
+  right: 10%;
+  height: 60px;
+  background: radial-gradient(ellipse at center, rgba(197,165,90,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(12px);
+}
+
+/* Play button overlay */
+.preview-play-btn {
+  position: absolute;
+  inset: 3px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(44,24,16,0.45);
+  cursor: pointer;
+  transition: background 500ms var(--ease-palace), opacity 500ms var(--ease-palace);
+  z-index: 3;
+}
+
+.preview-play-btn:hover {
+  background: rgba(44,24,16,0.25);
+}
+
+.preview-play-btn.is-playing {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.preview-play-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid rgba(197,165,90,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(44,24,16,0.6);
+  backdrop-filter: blur(8px);
+  transition: transform 400ms var(--ease-palace), border-color 400ms ease;
+}
+
+.preview-play-btn:hover .preview-play-icon {
+  transform: scale(1.08);
+  border-color: var(--gold-bright);
+}
+
+.preview-play-icon svg {
+  width: 28px;
+  height: 28px;
+  margin-left: 4px;
+  fill: var(--gold-bright);
+  filter: drop-shadow(0 0 6px rgba(197,165,90,0.4));
+}
+
+/* Subtitle beneath video */
+.preview-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  color: var(--champagne);
+  letter-spacing: 0.06em;
+  margin-top: 20px;
+  opacity: 0.6;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .preview-theatre {
+    max-width: 92%;
+  }
+  .preview-wrap {
+    padding: 48px 24px;
+  }
+  .preview-play-icon {
+    width: 56px;
+    height: 56px;
+  }
+  .preview-play-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+}

@@ -1,12 +1,14 @@
 var Particles = (function() {
-  function create(slide) {
+  function create(slide, variant) {
     if (slide.querySelector('.particles-container')) return;
     var container = document.createElement('div');
     container.className = 'particles-container';
 
+    var cls = (variant === 'brown') ? 'brown-particle' : 'gold-particle';
+
     for (var i = 0; i < 18; i++) {
       var p = document.createElement('div');
-      p.className = 'gold-particle';
+      p.className = cls;
       p.style.left = (Math.random() * 100) + '%';
       p.style.top = (Math.random() * 100) + '%';
       var size = 2 + Math.random() * 3;
@@ -22,7 +24,7 @@ var Particles = (function() {
   }
 
   function show(slide) {
-    var particles = slide.querySelectorAll('.gold-particle');
+    var particles = slide.querySelectorAll('.gold-particle, .brown-particle');
     particles.forEach(function(p, i) {
       setTimeout(function() {
         p.style.opacity = (0.15 + Math.random() * 0.35).toFixed(2);
@@ -31,7 +33,7 @@ var Particles = (function() {
   }
 
   function hide(slide) {
-    slide.querySelectorAll('.gold-particle').forEach(function(p) {
+    slide.querySelectorAll('.gold-particle, .brown-particle').forEach(function(p) {
       p.style.opacity = '0';
     });
   }

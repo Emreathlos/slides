@@ -7,7 +7,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--choc
   position: absolute; inset: 0; width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
   opacity: 0; pointer-events: none;
-  transition: opacity 80ms;
+  transition: opacity 250ms ease;
   overflow: hidden;
 }
 .slide.active { opacity: 1; pointer-events: auto; z-index: 2; }
@@ -140,7 +140,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--choc
   100% { transform: translate(0, 0) scale(1); }
 }
 
-/* ─── GOLD PARTICLES ─── */
+/* ─── PARTICLES ─── */
 .particles-container { position: absolute; inset: 0; pointer-events: none; z-index: 5; overflow: hidden; }
 .gold-particle {
   position: absolute; border-radius: 50%;
@@ -148,12 +148,20 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--choc
   transition: opacity 2s var(--ease-palace);
   animation: particleDrift linear infinite;
 }
+.brown-particle {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle, var(--chocolate-muted), var(--chocolate-soft));
+  transition: opacity 2s var(--ease-palace);
+  animation: particleDrift linear infinite;
+}
 
-/* ─── WIPE TRANSITION ─── */
+/* ─── GOLDEN VEIL TRANSITION ─── */
 .wipe {
   position: fixed; inset: 0; z-index: 50;
-  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 40%, var(--gold-bright) 60%, var(--gold) 100%);
-  transform: translateX(-105%); pointer-events: none;
+  pointer-events: none;
+}
+.wipe canvas {
+  width: 100%; height: 100%;
 }
 
 /* ─── KEYBOARD HINT ─── */
