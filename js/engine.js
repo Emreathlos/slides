@@ -1,7 +1,7 @@
 var Engine = (function() {
   var slides, cnt, prog, hint, wipe;
   var cur = 0, busy = false;
-  var darkSlides = ['slide-hero', 'slide-quote', 'slide-silence', 'slide-preview', 'slide-team'];
+  var darkSlides = ['slide-hero', 'slide-quote', 'slide-silence', 'slide-preview', 'slide-vision', 'slide-team'];
 
   function init() {
     slides = document.querySelectorAll('.slide');
