@@ -42,7 +42,7 @@
 .cta-txt { font-family: var(--font-body); font-size: 1.15rem; color: var(--chocolate); line-height: 1.4; }
 .cta-txt strong { font-weight: 700; color: var(--gold-dark); }
 
-.cta-qr { width: 280px; max-width: 70%; opacity: 0.95; }
+.cta-qr { width: 280px; max-width: 70%; opacity: 0.95; filter: brightness(1.6); }
 .cta-qr-label {
   font-family: var(--font-display); font-size: 1rem; color: var(--parchment);
   margin-top: 20px; letter-spacing: 0.08em;

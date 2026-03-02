@@ -112,3 +112,39 @@
   opacity: 0.6;
   line-height: 1.55;
 }
+
+/* ── Duration bars (proportional) ── */
+.vision-dur {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  /* max width scales with duration: 3 ay = 100%, 1 ay = 33% */
+  width: calc(var(--dur) / 3 * 100%);
+  max-width: 100%;
+}
+.vision-dur-bar {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-bright), rgba(197,165,90,0.3));
+  position: relative;
+}
+.vision-dur-bar::after {
+  content: '';
+  position: absolute;
+  inset: -1px 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(212,184,106,0.3), transparent);
+  filter: blur(3px);
+}
+.vision-dur-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.7;
+}

@@ -262,8 +262,8 @@ var Engine = (function() {
         prev.classList.remove('leaving');
         busy = false;
       },
-      isDark(prev) || isDark(next),
-      isBlackVeil(prev) || isBlackVeil(next)
+      isDark(prev),
+      isBlackVeil(prev)
     );
   }
 
