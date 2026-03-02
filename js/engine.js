@@ -1,7 +1,8 @@
 var Engine = (function() {
   var slides, cnt, prog, hint, wipe;
   var cur = 0, busy = false;
-  var darkSlides = ['slide-hero', 'slide-quote', 'slide-silence', 'slide-preview', 'slide-vision', 'slide-team'];
+  var darkSlides = ['slide-hero', 'slide-quote', 'slide-silence', 'slide-interview', 'slide-preview', 'slide-testimonials', 'slide-vision', 'slide-team'];
+  var blackVeilSlides = ['slide-flow', 'slide-pilot'];
 
   function init() {
     slides = document.querySelectorAll('.slide');
@@ -59,6 +60,13 @@ var Engine = (function() {
   function isDark(slide) {
     for (var i = 0; i < darkSlides.length; i++) {
       if (slide.classList.contains(darkSlides[i])) return true;
+    }
+    return false;
+  }
+
+  function isBlackVeil(slide) {
+    for (var i = 0; i < blackVeilSlides.length; i++) {
+      if (slide.classList.contains(blackVeilSlides[i])) return true;
     }
     return false;
   }
@@ -144,7 +152,7 @@ var Engine = (function() {
     ctx.restore();
   }
 
-  function fireVeil(onSwap, onDone, targetDark) {
+  function fireVeil(onSwap, onDone, targetDark, useBlack) {
     if (!veilCanvas) initVeilCanvas();
     sizeVeil();
     var W = window.innerWidth, H = window.innerHeight;
@@ -189,7 +197,11 @@ var Engine = (function() {
         var rot = p.rot + p.rotSpeed * pt;
 
         var r, g, b;
-        if (targetDark) {
+        if (useBlack) {
+          r = p.bright ? 40 : 10;
+          g = p.bright ? 40 : 10;
+          b = p.bright ? 40 : 10;
+        } else if (targetDark) {
           r = p.bright ? 218 : 180;
           g = p.bright ? 185 : 155;
           b = p.bright ? 90 : 75;
@@ -250,7 +262,8 @@ var Engine = (function() {
         prev.classList.remove('leaving');
         busy = false;
       },
-      isDark(prev)
+      isDark(prev) || isDark(next),
+      isBlackVeil(prev) || isBlackVeil(next)
     );
   }
 

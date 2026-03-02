@@ -1,0 +1,68 @@
+.slide-interview {
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(197,165,90,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 70%, rgba(212,184,106,0.04) 0%, transparent 40%),
+    var(--mahogany);
+}
+.interview-bg {
+  position: absolute; inset: 0;
+  background: url('../../extracted_images/hero-option2.jpg') center/cover;
+  opacity: 0.07;
+}
+.interview-wrap {
+  position: relative; z-index: 2;
+  max-width: 800px; text-align: center; padding: 80px;
+  display: flex; flex-direction: column; align-items: center;
+}
+.interview-label {
+  font-family: var(--font-display); font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px;
+}
+.interview-stat {
+  display: flex; align-items: baseline; justify-content: center;
+  gap: 0; margin: 32px 0 28px;
+}
+.interview-big {
+  font-family: var(--font-display); font-size: clamp(5rem, 10vw, 8rem);
+  font-weight: 800; line-height: 1;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-bright));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.interview-of {
+  font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400; color: var(--champagne); opacity: 0.5;
+  margin: 0 8px;
+}
+.interview-total {
+  font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700; color: var(--champagne); opacity: 0.6;
+}
+.interview-desc {
+  font-family: var(--font-display); font-size: clamp(1.2rem, 2vw, 1.65rem);
+  font-weight: 400; font-style: italic; color: var(--champagne);
+  line-height: 1.5; max-width: 600px;
+}
+.interview-desc strong {
+  color: var(--parchment-light); font-weight: 600;
+}
+.interview-context {
+  font-family: var(--font-body); font-size: 0.95rem;
+  color: var(--gold); opacity: 0.6;
+  letter-spacing: 0.06em; margin-top: 16px;
+}
+
+/* Light ornament corners on dark interview slide */
+.slide-interview .ornament-frame::before,
+.slide-interview .ornament-frame::after,
+.slide-interview .ornament-frame .corner-bl,
+.slide-interview .ornament-frame .corner-br {
+  opacity: 0;
+}
+.slide-interview.active .ornament-frame::before,
+.slide-interview.active .ornament-frame::after,
+.slide-interview.active .ornament-frame .corner-bl,
+.slide-interview.active .ornament-frame .corner-br {
+  opacity: 0.9;
+  background-size: 100% 2px, 2px 100%;
+}

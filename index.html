@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="tr">
+
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,33 +9,36 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
-			rel="stylesheet"
-		/>
+			rel="stylesheet" />
 
 		<!-- CSS: Variables & Base -->
-		<link rel="stylesheet" href="css/variables.css" />
-		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/variables.css?v=2" />
+		<link rel="stylesheet" href="css/base.css?v=2" />
 
 		<!-- CSS: Per-slide styles -->
-		<link rel="stylesheet" href="css/slides/hero.css" />
-		<link rel="stylesheet" href="css/slides/quote.css" />
-		<link rel="stylesheet" href="css/slides/iceberg.css" />
-		<link rel="stylesheet" href="css/slides/story.css" />
-		<link rel="stylesheet" href="css/slides/reviews.css" />
-		<link rel="stylesheet" href="css/slides/silence.css" />
-		<link rel="stylesheet" href="css/slides/solution.css" />
-		<link rel="stylesheet" href="css/slides/flow.css" />
-		<link rel="stylesheet" href="css/slides/preview.css" />
-		<link rel="stylesheet" href="css/slides/pilot.css" />
-		<link rel="stylesheet" href="css/slides/cost.css" />
-		<link rel="stylesheet" href="css/slides/impact.css" />
-		<link rel="stylesheet" href="css/slides/vision.css" />
-		<link rel="stylesheet" href="css/slides/team.css" />
-		<link rel="stylesheet" href="css/slides/cta.css" />
+		<link rel="stylesheet" href="css/slides/hero.css?v=2" />
+		<link rel="stylesheet" href="css/slides/quote.css?v=2" />
+		<link rel="stylesheet" href="css/slides/iceberg.css?v=2" />
+		<link rel="stylesheet" href="css/slides/story.css?v=2" />
+		<link rel="stylesheet" href="css/slides/reviews.css?v=2" />
+		<link rel="stylesheet" href="css/slides/silence.css?v=2" />
+		<link rel="stylesheet" href="css/slides/interview.css?v=2" />
+		<link rel="stylesheet" href="css/slides/current-flow.css?v=2" />
+		<link rel="stylesheet" href="css/slides/solution.css?v=2" />
+		<link rel="stylesheet" href="css/slides/flow.css?v=2" />
+		<link rel="stylesheet" href="css/slides/preview.css?v=2" />
+		<link rel="stylesheet" href="css/slides/pilot.css?v=2" />
+		<link rel="stylesheet" href="css/slides/testimonials.css?v=2" />
+		<link rel="stylesheet" href="css/slides/cost.css?v=2" />
+		<link rel="stylesheet" href="css/slides/impact.css?v=2" />
+		<link rel="stylesheet" href="css/slides/vision.css?v=2" />
+		<link rel="stylesheet" href="css/slides/team.css?v=2" />
+		<link rel="stylesheet" href="css/slides/cta.css?v=2" />
 	</head>
+
 	<body>
 		<div class="progress-bar" id="prog"></div>
-		<div class="slide-counter" id="cnt">1 / 15</div>
+		<div class="slide-counter" id="cnt">1 / 18</div>
 		<div class="key-hint" id="hint">← → tuşları ile ilerleyin</div>
 		<div class="wipe" id="wipe"></div>
 
@@ -52,17 +56,10 @@
 						<h1 class="hero-title rv d3">
 							Memnuniyetin<br /><em>Dijital İmzası</em>
 						</h1>
-						<div
-							class="gold-rule rv d4"
-							style="width: 100px; margin: 8px 0 16px"
-						></div>
+						<div class="gold-rule rv d4" style="width: 100px; margin: 8px 0 16px"></div>
 						<p class="hero-subtitle rv d5">GLORIA PULSE</p>
 					</div>
-					<img
-						src="extracted_images/pngwing.com.png"
-						alt="Gloria Golf Resort"
-						class="hero-qr"
-					/>
+					<img src="extracted_images/pngwing.com.png" alt="Gloria Golf Resort" class="hero-qr" />
 				</div>
 			</section>
 
@@ -82,9 +79,8 @@
 							<div class="flourish-line"></div>
 						</div>
 						<p class="quote-text rv d3">
-							Gloria'nın en büyük rakibi diğer oteller değil,<br /><strong
-								>sessizce küsen misafirleridir.</strong
-							>
+							Gloria'nın en büyük rakibi diğer oteller değil,<br /><strong>sessizce küsen
+								misafirleridir.</strong>
 						</p>
 						<div class="flourish rv d4" style="margin-top: 32px">
 							<div class="flourish-line"></div>
@@ -109,12 +105,16 @@
 							<div class="flourish-diamond"></div>
 							<div class="flourish-line"></div>
 						</div>
-						<img
-							src="extracted_images/iceberg-diagram.png"
-							alt="Şikayet Buzdağı"
-							class="iceberg-img rv-scale d3"
-							style="margin-top: 24px"
-						/>
+						<div class="iceberg-split">
+							<img src="extracted_images/iceberg-diagram.png" alt="Şikayet Buzdağı"
+								class="iceberg-img rv-scale d3" />
+							<div class="iceberg-data rv d4">
+								<div class="iceberg-data-num" data-count="193165">0</div>
+								<div class="gold-rule rv d5" style="width: 48px; margin: 12px 0"></div>
+								<div class="iceberg-data-lbl">2025 yılında Gloria Hotels<br>toplam çağrı sayısı</div>
+								<div class="iceberg-data-sub">Her çağrı bir sorunun habercisi</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -130,15 +130,12 @@
 						<h2 class="slide-title rv d1">
 							Küçük Bir Sorun Nasıl Bir Kabusa Dönüşüyor?
 						</h2>
-						<p
-							class="rv d2"
-							style="
+						<p class="rv d2" style="
 								font-family: var(--font-body);
 								font-size: 1.1rem;
 								color: var(--chocolate-muted);
 								margin-bottom: 8px;
-							"
-						>
+							">
 							Firdevs Hanım'ın Kayıp 2 Saati
 						</p>
 						<div class="flourish rv d2">
@@ -197,26 +194,17 @@
 							<div class="review-track" id="reviewTrack">
 								<div class="review-card">
 									<div class="review-card-inner">
-										<img
-											src="extracted_images/tripadvisor-review.jpg"
-											alt="Review 1"
-										/>
+										<img src="extracted_images/tripadvisor-review.jpg" alt="Review 1" />
 									</div>
 								</div>
 								<div class="review-card">
 									<div class="review-card-inner">
-										<img
-											src="extracted_images/review-samet.jpg"
-											alt="Review 2"
-										/>
+										<img src="extracted_images/review-samet.jpg" alt="Review 2" />
 									</div>
 								</div>
 								<div class="review-card">
 									<div class="review-card-inner">
-										<img
-											src="extracted_images/review-dlaseklund.jpg"
-											alt="Review 3"
-										/>
+										<img src="extracted_images/review-dlaseklund.jpg" alt="Review 3" />
 									</div>
 								</div>
 							</div>
@@ -226,16 +214,13 @@
 							<div class="carousel-dot" data-idx="1"></div>
 							<div class="carousel-dot" data-idx="2"></div>
 						</div>
-						<p
-							class="rv d5"
-							style="
+						<p class="rv d5" style="
 								font-family: var(--font-body);
 								font-size: 0.95rem;
 								color: var(--chocolate-muted);
 								margin-top: 16px;
 								letter-spacing: 0.04em;
-							"
-						>
+							">
 							Tripadvisor: Gerçek misafir yorumları
 						</p>
 					</div>
@@ -267,6 +252,127 @@
 				</div>
 			</section>
 
+			<!-- ═══ 6b: INTERVIEW — Customer Evidence ═══ -->
+			<section class="slide slide-interview" data-theme="dark">
+				<div class="slide-inner">
+					<div class="interview-bg"></div>
+					<div class="ornament-frame">
+						<div class="corner-bl"></div>
+						<div class="corner-br"></div>
+					</div>
+					<div class="interview-wrap">
+						<p class="interview-label rv d1">Yüz Yüze Görüşmeler</p>
+						<div class="flourish rv d2">
+							<div class="flourish-line"></div>
+							<div class="flourish-diamond"></div>
+							<div class="flourish-line"></div>
+						</div>
+						<div class="interview-stat rv d3">
+							<span class="interview-big">8</span>
+							<span class="interview-of">/</span>
+							<span class="interview-total">12</span>
+						</div>
+						<p class="interview-desc rv d4">
+							Geri bildirim vermek için<br><strong>vakit harcamak istemediğini belirtti</strong>
+						</p>
+						<div class="gold-rule rv d5" style="width: 64px; margin-top: 28px"></div>
+						<p class="interview-context rv d6">12 misafir ile yüz yüze görüşme yapıldı</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- ═══ 6c: CURRENT FLOW — Painful Process ═══ -->
+			<section class="slide slide-current-flow" data-theme="light">
+				<div class="slide-inner">
+					<div class="ornament-frame">
+						<div class="corner-bl"></div>
+						<div class="corner-br"></div>
+					</div>
+					<div class="current-flow-wrap">
+						<h2 class="slide-title rv d1">Mevcut Süreç</h2>
+						<p class="rv d2" style="
+							font-family: var(--font-body);
+							font-size: 1.15rem;
+							color: var(--chocolate-muted);
+							margin-bottom: 8px;
+						">
+							Bir şikayet ne yollardan geçiyor?
+						</p>
+						<div class="flourish rv d2">
+							<div class="flourish-line"></div>
+							<div class="flourish-diamond"></div>
+							<div class="flourish-line"></div>
+						</div>
+						<div class="cf-timeline" style="margin-top: 32px">
+							<div class="timeline-gold-line" id="cfLine"></div>
+							<div class="cf-step rv d3">
+								<div class="cf-icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+										stroke-linecap="round" stroke-linejoin="round">
+										<rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+										<line x1="12" y1="18" x2="12.01" y2="18" />
+									</svg>
+								</div>
+								<h3 class="cf-title">Gloria App</h3>
+								<p class="cf-desc">Misafir otelin uygulamasını açar</p>
+							</div>
+							<div class="cf-connector rv d3">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M5 12h14m-4-4l4 4-4 4" />
+								</svg>
+							</div>
+							<div class="cf-step rv d4">
+								<div class="cf-icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+										stroke-linecap="round" stroke-linejoin="round">
+										<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+									</svg>
+								</div>
+								<h3 class="cf-title">WhatsApp</h3>
+								<p class="cf-desc">WhatsApp butonuna tıklar</p>
+							</div>
+							<div class="cf-connector rv d4">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M5 12h14m-4-4l4 4-4 4" />
+								</svg>
+							</div>
+							<div class="cf-step rv d5">
+								<div class="cf-icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+										stroke-linecap="round" stroke-linejoin="round">
+										<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+										<circle cx="9" cy="7" r="4" />
+										<path d="M23 21v-2a4 4 0 00-3-3.87" />
+										<path d="M16 3.13a4 4 0 010 7.75" />
+									</svg>
+								</div>
+								<h3 class="cf-title">Görüşme</h3>
+								<p class="cf-desc">Birisiyle yazışır veya konuşur</p>
+							</div>
+							<div class="cf-connector rv d5">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M5 12h14m-4-4l4 4-4 4" />
+								</svg>
+							</div>
+							<div class="cf-step rv d6">
+								<div class="cf-icon cf-icon-last">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+										stroke-linecap="round" stroke-linejoin="round">
+										<path
+											d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+									</svg>
+								</div>
+								<h3 class="cf-title">Çağrı Merkezi</h3>
+								<p class="cf-desc">İlgili departmanı arar, süreci başlatır</p>
+							</div>
+						</div>
+						<div class="cf-verdict rv d7">
+							<span class="cf-verdict-text">Yorucu. Zaman alıcı. Takip Edilemez.</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<!-- ═══ 7: SOLUTION ═══ -->
 			<section class="slide slide-solution" data-theme="light">
 				<div class="slide-inner">
@@ -276,21 +382,14 @@
 					</div>
 					<div class="solution-wrap">
 						<div class="sol-phone">
-							<img
-								src="extracted_images/phone-mockup.png"
-								alt="Gloria Pulse App"
-								class="rv-scale d2"
-							/>
+							<img src="extracted_images/phone-mockup.png" alt="Gloria Pulse App" class="rv-scale d2" />
 						</div>
 						<div class="sol-text">
 							<p class="sol-label rv d1">Gloria Pulse</p>
 							<h2 class="sol-title rv d2">
 								İndirme Yok.<br />Kayıt Yok.<br /><em>Engel Yok.</em>
 							</h2>
-							<div
-								class="gold-rule rv d3"
-								style="width: 64px; margin-bottom: 20px"
-							></div>
+							<div class="gold-rule rv d3" style="width: 64px; margin-bottom: 20px"></div>
 							<p class="sol-desc rv d3">
 								Misafirle otel arasındaki her bariyeri kaldırdık. Geriye sadece
 								bir QR kodu kaldı.
@@ -314,15 +413,12 @@
 					</div>
 					<div class="flow-wrap">
 						<h2 class="slide-title rv d1">Her Saniye Önemli</h2>
-						<p
-							class="rv d2"
-							style="
+						<p class="rv d2" style="
 								font-family: var(--font-body);
 								font-size: 1.15rem;
 								color: var(--chocolate-muted);
 								margin-bottom: 8px;
-							"
-						>
+							">
 							Misafirden Personele Doğrudan Hat
 						</p>
 						<div class="flourish rv d2">
@@ -330,12 +426,58 @@
 							<div class="flourish-diamond"></div>
 							<div class="flourish-line"></div>
 						</div>
-						<img
-							src="extracted_images/flow-scan-select-solve.jpg"
-							alt="Okut - Seç - Çöz"
-							class="flow-img rv-scale d3"
-							style="margin-top: 24px"
-						/>
+						<div class="flow-timeline" style="margin-top: 32px">
+							<div class="cf-step rv d3">
+								<div class="cf-icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+										stroke-linecap="round" stroke-linejoin="round">
+										<rect x="3" y="3" width="18" height="18" rx="2" />
+										<line x1="7" y1="8" x2="7" y2="8.01" />
+										<line x1="7" y1="12" x2="7" y2="12.01" />
+										<line x1="7" y1="16" x2="7" y2="16.01" />
+										<line x1="11" y1="8" x2="17" y2="8" />
+										<line x1="11" y1="12" x2="17" y2="12" />
+										<line x1="11" y1="16" x2="17" y2="16" />
+									</svg>
+								</div>
+								<h3 class="cf-title">1. Okut</h3>
+								<p class="cf-desc">Misafir QR'ı okutur.</p>
+							</div>
+							<div class="cf-connector rv d3">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M5 12h14m-4-4l4 4-4 4" />
+								</svg>
+							</div>
+							<div class="cf-step rv d4">
+								<div class="cf-icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+										stroke-linecap="round" stroke-linejoin="round">
+										<rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+										<line x1="12" y1="18" x2="12.01" y2="18" />
+									</svg>
+								</div>
+								<h3 class="cf-title">2. Seç</h3>
+								<p class="cf-desc">'Odamda Teknik Sorun' başlığını seçer. BU CRM sistemine iletilir.</p>
+							</div>
+							<div class="cf-connector rv d4">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M5 12h14m-4-4l4 4-4 4" />
+								</svg>
+							</div>
+							<div class="cf-step rv d5">
+								<div class="cf-icon cf-icon-solve">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+										stroke-linecap="round" stroke-linejoin="round">
+										<path
+											d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+									</svg>
+								</div>
+								<h3 class="cf-title">3. Çöz</h3>
+								<p class="cf-desc">Bildirim arada katman olmadan ilgili Şef'in
+									<strong>WhatsApp</strong>'ına ve <strong>e-posta</strong>'sına anında ulaşır.
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -358,14 +500,8 @@
 						</div>
 						<div class="preview-theatre rv-scale d3">
 							<div class="preview-frame">
-								<video
-									class="preview-video"
-									id="previewVideo"
-									src="extracted_images/final_preview.mp4"
-									preload="auto"
-									playsinline
-									loop
-								></video>
+								<video class="preview-video" id="previewVideo" src="extracted_images/final_preview.mp4"
+									preload="auto" playsinline loop></video>
 								<div class="preview-play-btn" id="previewPlayBtn">
 									<div class="preview-play-icon">
 										<svg viewBox="0 0 24 24">
@@ -390,38 +526,30 @@
 					</div>
 					<div class="pilot-wrap">
 						<div class="pilot-img-wrap rv-scale d2">
-							<img
-								src="extracted_images/feedback-data-stars.jpg"
-								alt="Geri Bildirim Verisi"
-							/>
+							<img src="extracted_images/feedback-data-stars.jpg" alt="Geri Bildirim Verisi" />
 						</div>
 						<div class="pilot-stats">
 							<h2 class="slide-title rv d1" style="text-align: left">
 								Veriler Yalan Söylemez
 							</h2>
-							<p
-								class="rv d2"
-								style="
+							<p class="rv d2" style="
 									font-family: var(--font-body);
 									font-size: 1.05rem;
 									color: var(--chocolate-muted);
 									margin-bottom: 8px;
-								"
-							>
+								">
 								8 haftalık pilot test sonuçları
 							</p>
-							<div
-								class="gold-rule rv d2"
-								style="width: 56px; margin-bottom: 24px; transform-origin: left"
-							></div>
+							<div class="gold-rule rv d2"
+								style="width: 56px; margin-bottom: 24px; transform-origin: left"></div>
 							<div class="stats-grid">
 								<div class="rv d3">
-									<div class="stat-num" data-count="50" data-suffix="+">0</div>
+									<div class="stat-num" data-count="70" data-suffix="+">0</div>
 									<div class="stat-bar"></div>
 									<div class="stat-lbl">Geri Dönüş</div>
 								</div>
 								<div class="rv d4">
-									<div class="stat-num" data-count="3">0</div>
+									<div class="stat-num" data-count="3" data-suffix="/3">0</div>
 									<div class="stat-bar"></div>
 									<div class="stat-lbl">Çözülmüş Problem</div>
 								</div>
@@ -431,9 +559,9 @@
 									<div class="stat-lbl">Hafta Test Süresi</div>
 								</div>
 								<div class="rv d6">
-									<div class="stat-num" data-count="30">0</div>
+									<div class="stat-num" data-count="100" data-prefix="%">0</div>
 									<div class="stat-bar"></div>
-									<div class="stat-lbl">QR Kod Noktası</div>
+									<div class="stat-lbl">Sorun Çözme Oranı</div>
 								</div>
 							</div>
 						</div>
@@ -441,49 +569,83 @@
 				</div>
 			</section>
 
-			<!-- ═══ 10: COST ═══ -->
-			<section class="slide slide-cost" data-theme="light">
+			<!-- ═══ TESTIMONIALS ═══ -->
+			<section class="slide slide-testimonials" data-theme="dark">
 				<div class="slide-inner">
+					<div class="testimonials-bg"></div>
 					<div class="ornament-frame">
 						<div class="corner-bl"></div>
 						<div class="corner-br"></div>
 					</div>
-					<div class="cost-wrap">
-						<h2 class="slide-title rv d1">Düşük Maliyet, Büyük Etki</h2>
+					<div class="testimonials-wrap">
+						<p class="testimonials-label rv d1">Sahadan Sesler</p>
 						<div class="flourish rv d2">
 							<div class="flourish-line"></div>
 							<div class="flourish-diamond"></div>
 							<div class="flourish-line"></div>
 						</div>
-						<div class="cost-table" style="margin-top: 32px">
-							<div class="cost-row rv d3">
-								<div class="cost-name">Yazılımcı</div>
-								<div class="cost-detail">
-									3 hafta boyunca bakım ve geliştirmeler
+						<div class="testimonial-block rv d3">
+							<p class="testimonial-text">Bu uygulama Gloria'nın tam ihtiyaç duyduğu şeydi</p>
+							<p class="testimonial-attr">Selim Bey</p>
+						</div>
+						<div class="gold-rule rv d4" style="width: 56px; margin: 24px 0"></div>
+						<div class="testimonial-block rv d5">
+							<p class="testimonial-text">15 Senedir Gloria Verde'ye geliyorum. Bu değişikliği görmek beni
+								çok heyecanlandırdı.</p>
+							<p class="testimonial-attr">Repeat Müşteri</p>
+						</div>
+						<div class="flourish rv d6" style="margin-top: 40px">
+							<div class="flourish-line"></div>
+							<div class="flourish-diamond"></div>
+							<div class="flourish-line"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ═══ 11: IMPACT ═══ -->
+			<section class="slide slide-impact" data-theme="light">
+				<div class="slide-inner">
+					<div class="ornament-frame">
+						<div class="corner-bl"></div>
+						<div class="corner-br"></div>
+					</div>
+					<div class="impact-wrap">
+						<h2 class="slide-title rv d1">Beklenen Etki</h2>
+						<p class="rv d2" style="
+								font-family: var(--font-body);
+								font-size: 1.15rem;
+								color: var(--chocolate-muted);
+								margin-bottom: 8px;
+							">
+							Daha Az Operasyonel Yük, Daha Mutlu Misafir
+						</p>
+						<div class="flourish rv d2">
+							<div class="flourish-line"></div>
+							<div class="flourish-diamond"></div>
+							<div class="flourish-line"></div>
+						</div>
+						<div class="impact-cards" style="margin-top: 32px">
+							<div class="impact-card rv d3">
+								<div class="impact-num" data-count="30" data-prefix="%" data-impact>
+									0
 								</div>
-								<div class="cost-hrs">20 Saat</div>
+								<div class="impact-bar"></div>
+								<div class="impact-lbl">Çağrı Sayısında<br />Azalma</div>
 							</div>
-							<div class="cost-row rv d4">
-								<div class="cost-name">Resepsiyon Ekibi</div>
-								<div class="cost-detail">
-									Misafirlere sistemin anlatılması ve yönlendirme
+							<div class="impact-card rv d4">
+								<div class="impact-num" data-count="10" data-prefix="%" data-impact>
+									0
 								</div>
-								<div class="cost-hrs">40 Saat</div>
+								<div class="impact-bar"></div>
+								<div class="impact-lbl">Müşteri Memnuniyeti<br />Artışı</div>
 							</div>
-							<div class="cost-row rv d4">
-								<div class="cost-name">Hosting / Sunucu</div>
-								<div class="cost-detail">Sistemin çalışacağı altyapı</div>
-								<div class="cost-hrs">Ücretsiz Katman</div>
-							</div>
-							<div class="cost-row rv d5">
-								<div class="cost-name">QR ve Baskı</div>
-								<div class="cost-detail">Görsel materyallerin hazırlanması</div>
-								<div class="cost-hrs">Malzeme Tedariği</div>
-							</div>
-							<div class="cost-row rv d6">
-								<div class="cost-name">Genel Toplam</div>
-								<div class="cost-detail"></div>
-								<div class="cost-hrs">~60 Saat + Malzemeler</div>
+							<div class="impact-card rv d5">
+								<div class="impact-num" data-count="5" data-prefix="%" data-impact>
+									0
+								</div>
+								<div class="impact-bar"></div>
+								<div class="impact-lbl">Repeat Müşteri<br />Artışı</div>
 							</div>
 						</div>
 					</div>
@@ -545,69 +707,67 @@
 				</div>
 			</section>
 
-			<!-- ═══ 11: IMPACT ═══ -->
-			<section class="slide slide-impact" data-theme="light">
+			<!-- ═══ COST ═══ -->
+			<section class="slide slide-cost" data-theme="light">
 				<div class="slide-inner">
 					<div class="ornament-frame">
 						<div class="corner-bl"></div>
 						<div class="corner-br"></div>
 					</div>
-					<div class="impact-wrap">
-						<h2 class="slide-title rv d1">Beklenen Etki</h2>
-						<p
-							class="rv d2"
-							style="
-								font-family: var(--font-body);
-								font-size: 1.15rem;
-								color: var(--chocolate-muted);
-								margin-bottom: 8px;
-							"
-						>
-							Daha Az Operasyonel Yük, Daha Mutlu Misafir
+					<div class="cost-wrap">
+						<h2 class="slide-title rv d1">Düşük Efor, Büyük Etki</h2>
+						<p class="rv d2" style="
+							font-family: var(--font-body);
+							font-size: 1.15rem;
+							color: var(--chocolate-muted);
+							margin-bottom: 8px;
+						">
+							3 Aylık Pilot Süreç İçin Gereken Efor
 						</p>
 						<div class="flourish rv d2">
 							<div class="flourish-line"></div>
 							<div class="flourish-diamond"></div>
 							<div class="flourish-line"></div>
 						</div>
-						<div class="impact-cards" style="margin-top: 32px">
-							<div class="impact-card rv d3">
-								<div
-									class="impact-num"
-									data-count="30"
-									data-prefix="%"
-									data-impact
-								>
-									0
+						<div class="cost-table" style="margin-top: 32px">
+							<div class="cost-row rv d3">
+								<div class="cost-name">Yazılım Eforu</div>
+								<div class="cost-detail">
+									3 hafta boyunca bakım ve geliştirmeler
 								</div>
-								<div class="impact-bar"></div>
-								<div class="impact-lbl">Çağrı Sayısında<br />Azalma</div>
+								<div class="cost-hrs">20 Saat</div>
 							</div>
-							<div class="impact-card rv d4">
-								<div
-									class="impact-num"
-									data-count="10"
-									data-prefix="%"
-									data-impact
-								>
-									0
+							<div class="cost-row rv d4">
+								<div class="cost-name">Resepsiyon Eforu</div>
+								<div class="cost-detail">
+									Misafirlere sistemin anlatılması ve yönlendirme
 								</div>
-								<div class="impact-bar"></div>
-								<div class="impact-lbl">Müşteri Memnuniyeti<br />Artışı</div>
+								<div class="cost-hrs">40 Saat</div>
 							</div>
-							<div class="impact-card rv d5">
-								<div
-									class="impact-num"
-									data-count="5"
-									data-prefix="%"
-									data-impact
-								>
-									0
-								</div>
-								<div class="impact-bar"></div>
-								<div class="impact-lbl">Repeat Müşteri<br />Artışı</div>
+							<div class="cost-row rv d4">
+								<div class="cost-name">Sunucu</div>
+								<div class="cost-detail">Sistemin çalışacağı altyapı</div>
+								<div class="cost-hrs">Ücretsiz</div>
+							</div>
+							<div class="cost-row rv d5">
+								<div class="cost-name">QR ve Baskı</div>
+								<div class="cost-detail">Görsel materyallerin hazırlanması</div>
+								<div class="cost-hrs">Malzeme Tedariği</div>
+							</div>
+							<div class="cost-row rv d6">
+								<div class="cost-name">Genel Toplam</div>
+								<div class="cost-detail"></div>
+								<div class="cost-hrs">~60 Saat + Malzemeler</div>
 							</div>
 						</div>
+						<p class="cost-footnote rv d7" style="
+							font-family: var(--font-body);
+							font-size: 0.85rem;
+							color: var(--chocolate-muted);
+							margin-top: 24px;
+							font-style: italic;
+							opacity: 0.75;
+						">* Tüm eforlar 3 aylık pilot süreç için öngörülmüştür.</p>
 					</div>
 				</div>
 			</section>
@@ -616,26 +776,19 @@
 			<section class="slide slide-team" data-theme="dark">
 				<div class="slide-inner">
 					<div class="team-wrap">
-						<img
-							src="extracted_images/team-illustration.png"
-							alt="Takımımız"
-							class="team-img"
-						/>
+						<img src="extracted_images/team-illustration.png" alt="Takımımız" class="team-img" />
 						<div class="ornament-frame">
 							<div class="corner-bl"></div>
 							<div class="corner-br"></div>
 						</div>
 						<div class="team-overlay">
 							<p class="team-tag rv d1">Takımımız</p>
-							<div
-								class="gold-rule rv d2"
-								style="
+							<div class="gold-rule rv d2" style="
 									width: 48px;
 									margin-bottom: 12px;
 									transform-origin: left;
 									background: var(--gold);
-								"
-							></div>
+								"></div>
 							<p class="team-quote rv d3">
 								"En tehlikeli misafir bağıran değil, <strong>susandır.</strong>"
 							</p>
@@ -682,11 +835,7 @@
 							</div>
 						</div>
 						<div class="cta-right rv d5">
-							<img
-								src="extracted_images/gloria-qr-code.png"
-								alt="Gloria QR"
-								class="cta-qr"
-							/>
+							<img src="extracted_images/gloria-qr-code.png" alt="Gloria QR" class="cta-qr" />
 							<p class="cta-qr-label">Gloria Pulse'ı Deneyin</p>
 						</div>
 					</div>
@@ -704,4 +853,5 @@
 			Engine.init();
 		</script>
 	</body>
+
 </html>

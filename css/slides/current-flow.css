@@ -1,0 +1,69 @@
+.slide-current-flow {
+  background:
+    radial-gradient(ellipse at 45% 30%, rgba(212,184,106,0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 65% 75%, rgba(197,165,90,0.14) 0%, transparent 45%),
+    linear-gradient(155deg, var(--parchment) 0%, rgba(242,233,212,0.9) 35%, rgba(232,213,163,0.28) 65%, rgba(237,224,200,0.65) 100%),
+    var(--parchment);
+}
+.current-flow-wrap {
+  width: 100%; height: 100%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 56px 64px;
+}
+.cf-timeline {
+  display: flex; width: 100%; max-width: 1100px;
+  position: relative; margin-top: 24px;
+  align-items: flex-start;
+}
+.cf-timeline .timeline-gold-line {
+  display: none;
+}
+.cf-step {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; text-align: center; padding: 0 12px;
+}
+.cf-icon {
+  width: 88px; height: 88px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold-dark);
+  margin-bottom: 20px; position: relative; z-index: 2;
+  border: 2px solid var(--gold);
+  background: linear-gradient(135deg, var(--parchment-light), rgba(232,213,163,0.45));
+  box-shadow: 0 0 0 6px var(--parchment), 0 4px 20px rgba(44,24,16,0.1), inset 0 1px 0 rgba(255,255,255,0.5);
+  transition: transform 500ms var(--ease-palace), box-shadow 500ms var(--ease-palace);
+}
+.cf-icon svg {
+  width: 36px; height: 36px; flex-shrink: 0;
+}
+.cf-connector svg {
+  width: 28px; height: 28px; flex-shrink: 0;
+}
+.cf-icon-last {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+  box-shadow: 0 0 0 6px var(--parchment), 0 4px 24px rgba(196,116,90,0.15), inset 0 1px 0 rgba(255,255,255,0.5);
+}
+.cf-connector {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; min-width: 40px; padding-top: 32px;
+  color: var(--gold); opacity: 0.5;
+}
+.cf-title {
+  font-family: var(--font-display); font-size: 1.1rem;
+  font-weight: 700; color: var(--chocolate); margin-bottom: 6px;
+}
+.cf-desc {
+  font-family: var(--font-body); font-size: 1rem;
+  color: var(--chocolate-muted); line-height: 1.45; max-width: 200px;
+}
+.cf-verdict {
+  margin-top: 40px; text-align: center;
+  padding: 16px 40px;
+  border: 1px solid rgba(196,116,90,0.3);
+  border-radius: 100px;
+  background: rgba(196,116,90,0.06);
+}
+.cf-verdict-text {
+  font-family: var(--font-display); font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 600; color: var(--terracotta);
+  letter-spacing: 0.02em;
+}
